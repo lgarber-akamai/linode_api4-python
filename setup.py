@@ -63,7 +63,7 @@ if version.startswith("v"):
     version = version[1:]
 
 setup(
-    name='linode_api4',
+    name='linode_api4-testrelease',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
