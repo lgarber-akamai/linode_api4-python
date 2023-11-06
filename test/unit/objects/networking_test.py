@@ -83,3 +83,12 @@ class NetworkingTest(ClientBaseCase):
         self.assertEqual(ip.vpc_nat_1_1.vpc_id, 242)
         self.assertEqual(ip.vpc_nat_1_1.subnet_id, 194)
         self.assertEqual(ip.vpc_nat_1_1.address, "139.144.244.36")
+
+    def test_no_vpc_nat_1_1(self):
+        """
+        Tests that the vpc_nat_1_1 of an IP can be retrieved.
+        """
+
+        ip = self.client.load(IPAddress, "127.0.0.2")
+
+        self.assertEqual(ip.vpc_nat_1_1, None)

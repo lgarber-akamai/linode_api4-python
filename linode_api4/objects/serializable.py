@@ -1,6 +1,6 @@
 import inspect
 from dataclasses import asdict, dataclass
-from typing import Any, Dict, get_type_hints
+from typing import Any, Dict, get_type_hints, Optional
 
 
 @dataclass
@@ -21,10 +21,14 @@ class JSONObject:
     # TODO: Implement __repr__
 
     @classmethod
-    def from_json(cls, json: Dict[str, Any]) -> "JSONObject":
+    def from_json(cls, json: Dict[str, Any]) -> Optional["JSONObject"]:
         """
         Creates an instance of this class from a JSON dict.
         """
+
+        if json is None:
+            return None
+
         obj = cls()
 
         type_hints = get_type_hints(cls)
