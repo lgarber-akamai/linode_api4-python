@@ -24,6 +24,7 @@ class JSONObject:
     def from_json(cls, json: Dict[str, Any]) -> Optional["JSONObject"]:
         """
         Creates an instance of this class from a JSON dict.
+        If JSON is None, None will be returned.
         """
 
         if json is None:
